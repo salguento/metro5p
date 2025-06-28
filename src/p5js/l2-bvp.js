@@ -1,5 +1,5 @@
-let canvasWidth = 840;
-let canvasHeight = 616;
+let canvasWidth = 2000;
+let canvasHeight = 400;
 let squareSize,
   color1,
   color2,
