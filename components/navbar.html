@@ -1,0 +1,60 @@
+<nav class="navbar">
+  <div class="navbar-wrapper">
+    <a href="/">
+      <img
+        src="/assets/img/logo_metro5p.svg"
+        style="height: 32px; width: auto"
+      />
+    </a>
+  </div>
+</nav>
+<style>
+  /* Mobile */
+  @media (max-width: 475px) {
+    .navbar-wrapper {
+      max-width: 100%;
+    }
+  }
+
+  /* Tablet */
+  @media (min-width: 640px) {
+    .navbar-wrapper {
+      max-width: 800px;
+    }
+  }
+
+  /* Laptop */
+  @media (min-width: 1024px) {
+    .navbar-wrapper {
+      max-width: 1024px;
+    }
+  }
+  /* Desktop */
+  @media (min-width: 1280px) {
+    .navbar-wrapper {
+      max-width: 1280px;
+    }
+  }
+  .navbar {
+    background: rgba(256, 256, 256, 0.65);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid lightgray;
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+  }
+  .navbar-wrapper {
+    width: 100%;
+    margin: 0 0.5rem;
+    padding: 0.5rem 0;
+    display: flex;
+    align-items: center;
+  }
+  .navbar a {
+    color: white;
+    margin-right: 1rem;
+  }
+</style>

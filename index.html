@@ -3,79 +3,44 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Desaceleração</title>
-    <link rel="stylesheet" href="style.css" />
+    <title>metro5p</title>
+    <link rel="icon" type="image/x-icon" href="./favicon.ico" />
+    <link rel="stylesheet" href="./styles/style.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.1/p5.min.js"></script>
   </head>
   <body>
-    <div class="container">
-      <h1>Desaceleração</h1>
-
-      <form id="dimensions-form">
-        <div class="form-section">
-          <div class="form-group">
-            <label for="image-width">Largura da imagem (px):</label>
-            <input
-              type="number"
-              id="image-width"
-              name="image-width"
-              value="840"
-              min="16"
-            />
-          </div>
-          <div class="form-group">
-            <label for="image-height">Altura da imagem (px):</label>
-            <input
-              type="number"
-              id="image-height"
-              name="image-height"
-              value="616"
-              min="16"
-            />
-          </div>
-          <div class="form-group">
-            <label for="image-cols">Tamanho da lajota (px)</label>
-            <input
-              type="number"
-              id="square-size"
-              name="square-size"
-              value="56"
-              min="8"
-            />
-          </div>
+    <div id="navbar-container"></div>
+    <main>
+      <header class="container">
+        <h1>Título de apresentação</h1>
+        <p>
+          Lorem ipsum dolor sit amet consectetur. Scelerisque risus quam arcu et
+          interdum egestas odio id. Commodo arcu tristique ultrices ornare.
+          Bibendum tortor quam aenean aliquet. Nulla dolor tempor sit elementum
+          sapien auctor.
+        </p>
+      </header>
+      <section class="container card-container">
+        <div class="card">
+          <a href="./artes/l2-bvm/index.html">
+            <img src="/assets/img/l2-bvm.png" />
+            <span>L2-BVM</span>
+          </a>
         </div>
-        <div class="form-section">
-          <div class="form-group">
-            <label for="color1">Cor 1:</label>
-            <input type="color" id="color1" value="#2E5594" />
-          </div>
-
-          <div class="form-group">
-            <label for="color2">Cor 2:</label>
-            <input type="color" id="color2" value="#286C78" />
-          </div>
-
-          <div class="form-group">
-            <label for="bg-color">Cor 3:</label>
-            <input type="color" id="color3" value="#A9432A" />
-          </div>
-
-          <div class="form-group">
-            <label for="shape-color">Cor 4:</label>
-            <input type="color" id="color4" value="#CE6828" />
-          </div>
-          <div class="form-group">
-            <label for="shape-color">Cor 5:</label>
-            <input type="color" id="color5" value="#ffffff" />
-          </div>
+        <div class="card">
+          <a href="./artes/l2-bvp/index.html">
+            <img src="/assets/img/l2-bvm.png" />
+            <span>L2-BVP </span>
+          </a>
         </div>
-
-        <button type="submit">Criar imagem</button>
-      </form>
-
-      <div id="sketch-holder"></div>
-    </div>
-
-    <script src="sketch.js"></script>
+      </section>
+    </main>
+    <script>
+      fetch("./components/navbar.html")
+        .then((res) => res.text())
+        .then((html) => {
+          document.getElementById("navbar-container").innerHTML = html;
+        });
+    </script>
   </body>
 </html>

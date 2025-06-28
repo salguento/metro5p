@@ -4,36 +4,35 @@ let squareSize, color1, color2, color3, color4, color5;
 let sketchInitialized = false;
 
 // Handle form submission
-document
-  .getElementById("dimensions-form")
-  .addEventListener("submit", function (e) {
-    e.preventDefault();
+document.getElementById("form").addEventListener("submit", function (e) {
+  e.preventDefault();
 
-    // Get the values from the form
-    canvasWidth = parseInt(document.getElementById("image-width").value);
-    canvasHeight = parseInt(document.getElementById("image-height").value);
-    squareSize = parseInt(document.getElementById("square-size").value);
-    color1 = hexToRgb(document.getElementById("color1").value);
-    color2 = hexToRgb(document.getElementById("color2").value);
-    color3 = hexToRgb(document.getElementById("color3").value);
-    color4 = hexToRgb(document.getElementById("color4").value);
-    color5 = hexToRgb(document.getElementById("color5").value);
-    clearDiv();
+  // Get the values from the form
+  canvasWidth = parseInt(document.getElementById("image-width").value);
+  canvasHeight = parseInt(document.getElementById("image-height").value);
+  squareSize = parseInt(document.getElementById("square-size").value);
+  color1 = hexToRgb(document.getElementById("color1").value);
+  color2 = hexToRgb(document.getElementById("color2").value);
+  color3 = hexToRgb(document.getElementById("color3").value);
+  color4 = hexToRgb(document.getElementById("color4").value);
+  color5 = hexToRgb(document.getElementById("color5").value);
 
-    // If sketch hasn't been initialized yet, create it
-    if (!sketchInitialized) {
-      new p5(sketch, "sketch-holder");
-      // sketchInitialized = true;
+  clearDiv();
+
+  // If sketch hasn't been initialized yet, create it
+  if (!sketchInitialized) {
+    new p5(sketch, "sketch-holder");
+    // sketchInitialized = true;
+  }
+  // Otherwise, resize the existing canvas
+  else {
+    const canvas = document.querySelector("#sketch-holder canvas");
+    if (canvas) {
+      canvas.width = canvasWidth;
+      canvas.height = canvasHeight;
     }
-    // Otherwise, resize the existing canvas
-    else {
-      const canvas = document.querySelector("#sketch-holder canvas");
-      if (canvas) {
-        canvas.width = canvasWidth;
-        canvas.height = canvasHeight;
-      }
-    }
-  });
+  }
+});
 
 // p5.js sketch
 function sketch(p) {

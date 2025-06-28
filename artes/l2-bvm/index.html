@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt_BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>metro5p</title>
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="stylesheet" href="/artes/style.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.1/p5.min.js"></script>
+  </head>
+  <body>
+    <div id="navbar-container"></div>
+    <main>
+      <header class="header">
+        <h1>L2-BVM</h1>
+        <div>
+          <p>
+            Baseado na obra
+            <a
+              href="https://pt.wikipedia.org/wiki/Fernando_Lemos#/media/Ficheiro:Des-acelera%C3%A7%C3%A3o_08.jpg"
+              target="_blank"
+            >
+              Des-Aceleração</a
+            >
+            (1991) de Fernando Lemos.
+          </p>
+          <p>Linha 2 - Verde, Estação Brigadeiro Sentido Vila Madalena.</p>
+        </div>
+      </header>
+      <form id="form" class="container">
+        <div class="form-section">
+          <div class="form-group">
+            <label for="image-width">Largura da imagem (px)</label>
+            <input
+              type="number"
+              id="image-width"
+              name="image-width"
+              value="840"
+              min="16"
+            />
+          </div>
+          <div class="form-group">
+            <label for="image-height">Altura da imagem (px)</label>
+            <input
+              type="number"
+              id="image-height"
+              name="image-height"
+              value="616"
+              min="16"
+            />
+          </div>
+          <div class="form-group">
+            <label for="image-cols">Tamanho da lajota (px)</label>
+            <input
+              type="number"
+              id="square-size"
+              name="square-size"
+              value="56"
+              min="4"
+            />
+          </div>
+        </div>
+        <div class="form-section">
+          <div class="form-group">
+            <label for="color1">Cor 1</label>
+            <input type="color" id="color1" value="#2E5594" />
+          </div>
+
+          <div class="form-group">
+            <label for="color2">Cor 2</label>
+            <input type="color" id="color2" value="#286C78" />
+          </div>
+
+          <div class="form-group">
+            <label for="bg-color">Cor 3</label>
+            <input type="color" id="color3" value="#A9432A" />
+          </div>
+
+          <div class="form-group">
+            <label for="shape-color">Cor 4</label>
+            <input type="color" id="color4" value="#CE6828" />
+          </div>
+          <div class="form-group">
+            <label for="shape-color">Cor 5</label>
+            <input type="color" id="color5" value="#ffffff" />
+          </div>
+        </div>
+
+        <button type="submit">Criar imagem</button>
+      </form>
+
+      <div id="sketch-holder" class="container"></div>
+    </main>
+    <script>
+      fetch("/components/navbar.html")
+        .then((res) => res.text())
+        .then((html) => {
+          document.getElementById("navbar-container").innerHTML = html;
+        });
+    </script>
+    <script src="/src/p5js/l2-bvm.js"></script>
+  </body>
+</html>
