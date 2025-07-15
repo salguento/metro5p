@@ -1,6 +1,5 @@
 let canvasWidth = 2000;
 let canvasHeight = 400;
-let squareSize,
   color1,
   color2,
   color3,
@@ -23,7 +22,6 @@ document.getElementById("form").addEventListener("submit", function (e) {
   // Get the values from the form
   canvasWidth = parseInt(document.getElementById("image-width").value);
   canvasHeight = parseInt(document.getElementById("image-height").value);
-  squareSize = parseInt(document.getElementById("square-size").value);
   color1 = hexToRgb(document.getElementById("color1").value);
   color2 = hexToRgb(document.getElementById("color2").value);
   color3 = hexToRgb(document.getElementById("color3").value);

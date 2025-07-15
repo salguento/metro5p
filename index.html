@@ -3,27 +3,22 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<<<<<<< HEAD
-    <title>metro5p</title>
+    <title>metrô5p</title>
     <link rel="icon" type="image/x-icon" href="./favicon.ico" />
     <link rel="stylesheet" href="./styles/style.css" />
-=======
     <title>Desaceleração</title>
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     <link rel="stylesheet" href="style.css" />
->>>>>>> 8feeee084017621f4c58e19a1160d2ac796d247f
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.1/p5.min.js"></script>
   </head>
   <body>
     <div id="navbar-container"></div>
     <main>
       <header class="container">
-        <h1>Título de apresentação</h1>
+        <h1>Metrô Pixelado </h1>
         <p>
-          Lorem ipsum dolor sit amet consectetur. Scelerisque risus quam arcu et
-          interdum egestas odio id. Commodo arcu tristique ultrices ornare.
-          Bibendum tortor quam aenean aliquet. Nulla dolor tempor sit elementum
-          sapien auctor.
+          Artes das estações de metrô de SP refeitas com P5.JS – com direito a pixels fora do lugar e cores que o
+          artista original provavelmente não aprovaria. 
         </p>
       </header>
       <section class="container card-container">
@@ -35,17 +30,26 @@
         </div>
         <div class="card">
           <a href="./artes/l2-bvp/index.html">
-            <img src="/assets/img/l2-bvm.png" />
+            <img src="/assets/img/l2-bvp.png" />
             <span>L2-BVP </span>
           </a>
         </div>
       </section>
     </main>
+    <div id="footer-container"></div>
+    <!-- IMPORT COMPONENTS -->
     <script>
       fetch("./components/navbar.html")
         .then((res) => res.text())
         .then((html) => {
           document.getElementById("navbar-container").innerHTML = html;
+        });
+    </script>
+    <script>
+      fetch("./components/footer.html")
+        .then((res) => res.text())
+        .then((html) => {
+          document.getElementById("footer-container").innerHTML = html;
         });
     </script>
   </body>

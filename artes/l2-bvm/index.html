@@ -91,11 +91,20 @@
 
       <div id="sketch-holder" class="container"></div>
     </main>
+    <div id="footer-container"></div>
+    <!-- IMPORT COMPONENTS -->
     <script>
       fetch("/components/navbar.html")
         .then((res) => res.text())
         .then((html) => {
           document.getElementById("navbar-container").innerHTML = html;
+        });
+    </script>
+    <script>
+      fetch("/components/footer.html")
+        .then((res) => res.text())
+        .then((html) => {
+          document.getElementById("footer-container").innerHTML = html;
         });
     </script>
     <script src="/src/p5js/l2-bvm.js"></script>
